@@ -39,7 +39,7 @@ const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
 // 站点链接
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
-  if (!url) return "imsyy.top".split(".");
+  if (!url) return "itmuyu.top".split(".");
   // 判断协议前缀
   if (url.startsWith("http://") || url.startsWith("https://")) {
     const urlFormat = url.replace(/^(https?:\/\/)/, "");
@@ -75,10 +75,8 @@ watch(
   () => store.boxOpenState,
   (value) => {
     if (value) {
-      descriptionText.hello = import.meta.env.VITE_DESC_HELLO_OTHER;
       descriptionText.text = import.meta.env.VITE_DESC_TEXT_OTHER;
     } else {
-      descriptionText.hello = import.meta.env.VITE_DESC_HELLO;
       descriptionText.text = import.meta.env.VITE_DESC_TEXT;
     }
   },
@@ -93,34 +91,53 @@ watch(
     align-items: center;
     animation: fade 0.5s;
     max-width: 460px;
+
     .logo-img {
-      border-radius: 50%;
+      margin: 5px;
       width: 120px;
+      border-radius: 10em;
+      box-shadow: 0 0 0 5px #fff;
     }
+
+    .logo-img:hover {
+      animation: round_animate 1s linear infinite;
+      -webkit-animation: round_animate 1s linear infinite;
+    }
+
+    @keyframes round_animate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
     .name {
       width: 100%;
       padding-left: 22px;
       transform: translateY(-8px);
-      font-family: "Pacifico-Regular";
+      font-family: "JHGFT";
 
       .bg {
-        font-size: 5rem;
+        font-size: 4rem;
       }
 
       .sm {
         margin-left: 6px;
         font-size: 2rem;
+
         @media (min-width: 720px) and (max-width: 789px) {
           display: none;
         }
       }
     }
+
     @media (max-width: 768px) {
       .logo-img {
         width: 100px;
       }
+
       .name {
         height: 128px;
+
         .bg {
           font-size: 4.5rem;
         }
@@ -149,7 +166,7 @@ watch(
 
         p {
           &:nth-of-type(1) {
-            font-family: "Pacifico-Regular";
+            font-family: "JHGFT";
           }
         }
       }
@@ -158,30 +175,37 @@ watch(
         align-self: flex-end;
       }
     }
+
     @media (max-width: 720px) {
       max-width: 100%;
       pointer-events: none;
     }
   }
+
   @media (max-width: 390px) {
     .logo {
       flex-direction: column;
+
       .logo-img {
         display: none;
       }
+
       .name {
         margin-left: 0;
         height: auto;
         transform: none;
         text-align: center;
+
         .bg {
           font-size: 3.5rem;
         }
+
         .sm {
           font-size: 1.4rem;
         }
       }
     }
+
     .description {
       margin-top: 2.5rem;
     }
