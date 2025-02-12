@@ -1,7 +1,7 @@
 <template>
   <footer id="footer" :class="store.footerBlur ? 'blur' : null">
     <Transition name="fade" mode="out-in">
-      <div v-if="!store.playerState || !store.playerLrcShow" class="power">
+      <div class="power">
         <span>
           Copyright&nbsp;&copy;
           <span v-if="siteStartDate?.length >= 4" class="site-start">
@@ -11,36 +11,18 @@
           {{ fullYear }}
           <a :href="siteUrl">{{ siteAnthor }}</a>
         </span>
-        <!-- 以下信息请不要修改哦 -->
-        <span class="hidden">
-          &amp;&nbsp;Made&nbsp;by
-          <a :href="config.github" target="_blank">
-            {{ config.author }}
-          </a>
-        </span>
         <!-- 站点备案 -->
         <a v-if="siteIcp" href="https://beian.miit.gov.cn" target="_blank">
           &amp;
           {{ siteIcp }}
         </a>
       </div>
-      <div v-else class="lrc">
-        <Transition name="fade" mode="out-in">
-          <div class="lrc-all" :key="store.getPlayerLrc">
-            <music-one theme="filled" size="18" fill="#efefef" />
-            <span class="lrc-text text-hidden" v-html="store.getPlayerLrc" />
-            <music-one theme="filled" size="18" fill="#efefef" />
-          </div>
-        </Transition>
-      </div>
     </Transition>
   </footer>
 </template>
 
 <script setup>
-import { MusicOne } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
-import config from "@/../package.json";
 
 const store = mainStore();
 const fullYear = new Date().getFullYear();
@@ -51,7 +33,7 @@ const siteIcp = ref(import.meta.env.VITE_SITE_ICP);
 const siteAnthor = ref(import.meta.env.VITE_SITE_ANTHOR);
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
-  if (!url) return "https://www.imsyy.top";
+  if (!url) return "https://www.itmuyu.top";
   // 判断协议前缀
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     return "//" + url;

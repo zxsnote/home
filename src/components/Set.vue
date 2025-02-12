@@ -22,24 +22,6 @@
           />
         </div>
         <div class="item">
-          <span class="text">音乐点击是否打开面板</span>
-          <el-switch
-            v-model="musicClick"
-            inline-prompt
-            :active-icon="CheckSmall"
-            :inactive-icon="CloseSmall"
-          />
-        </div>
-        <div class="item">
-          <span class="text">底栏歌词显示</span>
-          <el-switch
-            v-model="playerLrcShow"
-            inline-prompt
-            :active-icon="CheckSmall"
-            :inactive-icon="CloseSmall"
-          />
-        </div>
-        <div class="item">
           <span class="text">底栏背景模糊</span>
           <el-switch
             v-model="footerBlur"
@@ -49,10 +31,7 @@
           />
         </div>
       </el-collapse-item>
-      <el-collapse-item title="播放器配置" name="3">
-        <div>设置内容待增加</div>
-      </el-collapse-item>
-      <el-collapse-item title="其他设置" name="4">
+      <el-collapse-item title="其他设置" name="3">
         <div>设置内容待增加</div>
       </el-collapse-item>
     </el-collapse>
@@ -65,7 +44,7 @@ import { mainStore } from "@/store";
 import { storeToRefs } from "pinia";
 
 const store = mainStore();
-const { coverType, siteStartShow, musicClick, playerLrcShow, footerBlur } = storeToRefs(store);
+const { coverType, siteStartShow, footerBlur } = storeToRefs(store);
 
 // 默认选中项
 const activeName = ref("1");

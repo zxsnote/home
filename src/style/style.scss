@@ -1,7 +1,7 @@
 /*
-作者: imsyy
-主页：https://www.imsyy.top/
-GitHub：https://github.com/imsyy/home
+作者: itmuyu
+主页：https://www.itmuyu.top/
+GitHub：https://github.com/zxsnote/home
 版权所有，请勿删除
 */
 
@@ -17,7 +17,7 @@ body {
   padding: 0;
   background-color: #333;
   overflow: hidden;
-  font-family: "HarmonyOS_Regular", sans-serif;
+  font-family: "ChillRoundM", sans-serif;
 }
 
 *,
@@ -37,9 +37,16 @@ p {
 
 // 字体文件
 @font-face {
-  font-family: "Pacifico-Regular";
+  font-family: "ChillRoundM";
   font-display: swap;
-  src: url("/font/Pacifico-Regular.ttf") format("truetype");
+  src: url("/font/ChillRoundM.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "JHGFT";
+  font-display: swap;
+  src: url("/font/JHGFT.ttf") format("truetype");
 }
 
 @font-face {
@@ -67,9 +74,11 @@ p {
   transition:
     backdrop-filter 0.3s,
     transform 0.3s;
+
   &:hover {
     transform: scale(1.01);
   }
+
   &:active {
     transform: scale(0.98);
   }
@@ -94,6 +103,7 @@ p {
   .el-message__badge {
     display: none;
   }
+
   .el-message__content {
     white-space: nowrap;
   }
@@ -104,11 +114,13 @@ p {
   .el-progress-bar__outer {
     border-radius: 6px;
     background-color: #00000020;
+
     .el-progress-bar__inner {
       background-color: #efefef;
       border-radius: 6px;
       text-align: center;
       font-family: "UnidreamLED";
+
       span {
         color: #564d59;
         font-size: 0.9rem;
@@ -128,12 +140,14 @@ p {
   border-radius: 8px !important;
   border: 1px solid transparent !important;
   background-color: transparent !important;
+
   .el-card__header {
     font-weight: bold;
     padding: 16px 20px !important;
     background-color: #ffffff30 !important;
     border-bottom: 1px solid transparent !important;
   }
+
   .el-card__body {
     padding: 0 !important;
     background-color: #ffffff10 !important;
@@ -156,6 +170,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -166,6 +181,7 @@ p {
     filter: blur(20px) brightness(0.3);
     transform: scale(1.6);
   }
+
   to {
     filter: blur(0) brightness(1);
     transform: scale(1.2);
@@ -176,6 +192,7 @@ p {
   from {
     transform: scale(1.2);
   }
+
   to {
     transform: scale(1);
   }
@@ -185,29 +202,6 @@ p {
 @media (min-width: 910px) and (max-width: 1200px) {
   .sm-hidden {
     display: none;
-  }
-}
-
-// 自定义鼠标
-#cursor {
-  position: fixed;
-  width: 18px;
-  height: 18px;
-  background: #fff;
-  border-radius: 25px;
-  opacity: 0.25;
-  z-index: 10086;
-  pointer-events: none;
-  transition: 0.2s ease-in-out;
-  transition-property: background, opacity, transform;
-
-  &.hidden {
-    opacity: 0;
-  }
-
-  &.active {
-    opacity: 0.5;
-    transform: scale(0.5);
   }
 }
 
