@@ -7,19 +7,19 @@
   },
   {
     "name": "Github",
-    "icon": "/public/images/icon/github.png",
+    "icon": "/images/icon/github.png",
     "tip": "去 Github 看看",
     "url": "https://github.com/zxsnote/muyuu"
   },
   {
     "name": "Gitee",
-    "icon": "/public/images/icon/gitee.png",
+    "icon": "/images/icon/gitee.png",
     "tip": "去 Gitee 看看",
     "url": "https://gitee.com/zxsnote/muyuu"
   },
   {
     "name": "BiliBili",
-    "icon": "/public/images/icon/bilibili.png",
+    "icon": "/images/icon/bilibili.png",
     "tip": "(゜-゜)つロ 干杯 ~",
     "url": "https://space.Bilibili.com/349150506"
   }
